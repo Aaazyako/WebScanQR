@@ -7,51 +7,59 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .container {
-  width: 100%;
+  width: 90%;
   max-width: 800px;
-  padding: 20px;
+  padding: 2vw;
+  margin: 0 auto;
 }
 
 .card {
   background: white;
   border-radius: 12px;
-  padding: 20px;
+  padding: 3vw;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 h2 {
   margin-top: 0;
   text-align: center;
+  font-size: clamp(1.5rem, 5vw, 2rem);
 }
 
 input {
   width: 100%;
-  padding: 10px;
-  margin: 8px 0;
+  padding: 2vw;
+  margin: 1.5vw 0;
   border: 1px solid #ddd;
   border-radius: 8px;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  box-sizing: border-box;
 }
 
 button {
   width: 100%;
-  padding: 12px;
+  padding: 2.5vw;
   border: none;
   border-radius: 8px;
   background: #007bff;
   color: white;
-  font-size: 16px;
+  font-size: clamp(0.9rem, 3vw, 1rem);
   cursor: pointer;
 }
 
-button:hover { background: #0056b3; }
+button:hover {
+  background: #0056b3;
+}
 
 .error {
   color: red;
-  margin-top: 10px;
+  margin-top: 2vw;
   display: none;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
 }
 
 #scannerPage {
@@ -59,20 +67,23 @@ button:hover { background: #0056b3; }
   flex-direction: column;
   align-items: center;
   width: 100%;
+  padding: 2vw;
 }
 
 header {
   width: 100%;
   background: #007bff;
   color: white;
-  padding: 12px;
+  padding: 2vw;
   text-align: center;
   font-weight: bold;
   border-radius: 8px;
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
 }
 
 .user-info {
-  margin-top: 10px;
+  margin-top: 2vw;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
 }
 
 .video-container {
@@ -81,30 +92,38 @@ header {
   max-width: 400px;
   border-radius: 12px;
   overflow: hidden;
-  margin-top: 20px;
+  margin-top: 4vw;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-video { width: 100%; display: block; }
+video {
+  width: 100%;
+  display: block;
+}
 
 .scan-area {
   position: absolute;
-  top: 50%; left: 50%;
-  width: 70%; height: 50%;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 50%;
   border: 2px solid rgba(255,255,255,0.8);
   border-radius: 8px;
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
 
-#status { margin: 10px 0; }
+#status {
+  margin: 2vw 0;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+}
 
 #dashboard {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 4vw;
   background: white;
   border-radius: 12px;
-  padding: 15px;
+  padding: 3vw;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   overflow-x: auto;
 }
@@ -112,15 +131,73 @@ video { width: 100%; display: block; }
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
 }
 
 th, td {
-  padding: 10px;
+  padding: 2vw;
   border-bottom: 1px solid #eee;
   text-align: left;
 }
 
-th { background: #f0f0f0; }
+th {
+  background: #f0f0f0;
+}
 
-tr.completed { background: #e6ffe6; }
+tr.completed {
+  background: #e6ffe6;
+}
+
+/* Media Queries untuk layar kecil (handphone) */
+@media screen and (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 4vw;
+  }
+
+  .card {
+    padding: 4vw;
+  }
+
+  .video-container {
+    max-width: 100%;
+  }
+
+  input, button {
+    padding: 3vw;
+    font-size: clamp(0.85rem, 4vw, 0.95rem);
+  }
+
+  table {
+    font-size: clamp(0.75rem, 3vw, 0.85rem);
+  }
+
+  th, td {
+    padding: 2.5vw;
+  }
+}
+
+/* Media Queries untuk layar besar (desktop) */
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 80%;
+    padding: 1.5vw;
+  }
+
+  .card {
+    padding: 2vw;
+  }
+
+  input, button {
+    padding: 1.5vw;
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+  }
+
+  table {
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+  }
+
+  th, td {
+    padding: 1.5vw;
+  }
+}
