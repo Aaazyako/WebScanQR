@@ -1,3 +1,4 @@
+/* ====== Reset & Base ====== */
 body, html {
   margin: 0;
   padding: 0;
@@ -5,223 +6,162 @@ body, html {
   background: #f5f5f5;
   height: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  box-sizing: border-box;
 }
 
 .container {
-  width: 95%;
-  max-width: 600px;
-  padding: 2vw;
-  margin: 2vw auto;
+  width: 100%;
+  max-width: 800px;
+  padding: 16px;
 }
 
 .card {
   background: white;
-  border-radius: 8px;
-  padding: 2.5vw;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-h2 {
-  margin: 0 0 2vw;
+/* ====== Typography ====== */
+h2, h3 {
+  margin: 0 0 12px;
   text-align: center;
-  font-size: clamp(1.2rem, 4.5vw, 1.5rem);
+  font-size: 1.3rem;
 }
 
+input, button {
+  font-size: 1rem;
+}
+
+/* ====== Form Login ====== */
 input {
   width: 100%;
-  padding: 1.5vw;
-  margin: 1vw 0;
+  padding: 10px;
+  margin: 8px 0;
   border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: clamp(0.8rem, 3.5vw, 0.9rem);
-  box-sizing: border-box;
+  border-radius: 8px;
 }
 
 button {
   width: 100%;
-  padding: 2vw;
+  padding: 12px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   background: #007bff;
   color: white;
-  font-size: clamp(0.8rem, 3.5vw, 0.9rem);
+  font-size: 1rem;
   cursor: pointer;
 }
 
-button:hover {
-  background: #0056b3;
-}
+button:hover { background: #0056b3; }
 
 .error {
   color: red;
-  margin-top: 1vw;
+  margin-top: 10px;
   display: none;
-  font-size: clamp(0.7rem, 3vw, 0.8rem);
+  font-size: 0.9rem;
 }
 
+/* ====== Scanner Page ====== */
 #scannerPage {
   display: none;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 2vw;
 }
 
 header {
   width: 100%;
   background: #007bff;
   color: white;
-  padding: 1.5vw;
+  padding: 12px;
   text-align: center;
   font-weight: bold;
-  border-radius: 6px;
-  font-size: clamp(0.9rem, 3.5vw, 1rem);
+  border-radius: 8px;
+  font-size: 1.1rem;
 }
 
 .user-info {
-  margin-top: 1.5vw;
-  font-size: clamp(0.7rem, 3vw, 0.8rem);
+  margin-top: 10px;
+  font-size: 0.95rem;
 }
 
 .video-container {
   position: relative;
   width: 100%;
-  max-width: 100%;
-  border-radius: 8px;
+  max-width: 400px;
+  border-radius: 12px;
   overflow: hidden;
-  margin-top: 2.5vw;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  margin-top: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-video {
-  width: 100%;
-  display: block;
+video { 
+  width: 100%; 
+  display: block; 
 }
 
 .scan-area {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  height: 40%;
+  top: 50%; left: 50%;
+  width: 70%; height: 50%;
   border: 2px solid rgba(255,255,255,0.8);
-  border-radius: 6px;
+  border-radius: 8px;
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
 
-#status {
-  margin: 1.5vw 0;
-  font-size: clamp(0.8rem, 3.5vw, 0.9rem);
+#status { 
+  margin: 12px 0;
+  font-size: 0.95rem;
+  text-align: center;
 }
 
+/* ====== Dashboard ====== */
 #dashboard {
   width: 100%;
-  margin-top: 2.5vw;
+  margin-top: 20px;
   background: white;
-  border-radius: 8px;
-  padding: 2vw;
+  border-radius: 12px;
+  padding: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  overflow-x: auto;
+  overflow-x: auto; /* scroll horizontal bila tabel kepanjangan */
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: clamp(0.7rem, 3vw, 0.8rem);
+  font-size: 0.9rem;
+  min-width: 400px; /* supaya kolom tidak terlalu rapat */
 }
 
 th, td {
-  padding: 1.5vw;
+  padding: 8px 10px;
   border-bottom: 1px solid #eee;
   text-align: left;
 }
 
-th {
-  background: #f0f0f0;
+th { 
+  background: #f0f0f0; 
+  font-weight: 600;
 }
 
-tr.completed {
-  background: #e6ffe6;
+tr.completed { 
+  background: #e6ffe6; 
 }
 
-/* Media Queries untuk layar handphone (max-width: 600px) */
-@media screen and (max-width: 600px) {
+/* ====== Responsive Design ====== */
+@media (max-width: 600px) {
   .container {
-    width: 98%;
-    padding: 3vw;
-    margin: 1vw auto;
+    padding: 12px;
   }
 
-  .card {
-    padding: 3vw;
-    border-radius: 6px;
-  }
+  h2, h3 { font-size: 1.1rem; }
+  input, button { font-size: 0.95rem; }
+  header { font-size: 1rem; }
+  #status { font-size: 0.85rem; }
 
-  h2 {
-    font-size: clamp(1rem, 4.5vw, 1.3rem);
-  }
-
-  input, button {
-    padding: 2.5vw;
-    font-size: clamp(0.75rem, 4vw, 0.85rem);
-  }
-
-  .video-container {
-    max-width: 100%;
-  }
-
-  .scan-area {
-    width: 85%;
-    height: 35%;
-  }
-
-  #dashboard {
-    padding: 2.5vw;
-  }
-
-  table {
-    font-size: clamp(0.65rem, 3.5vw, 0.75rem);
-  }
-
-  th, td {
-    padding: 2vw;
-  }
-}
-
-/* Media Queries untuk layar sangat kecil (max-width: 400px) */
-@media screen and (max-width: 400px) {
-  .container {
-    width: 100%;
-    padding: 4vw;
-  }
-
-  .card {
-    padding: 4vw;
-  }
-
-  h2 {
-    font-size: clamp(0.9rem, 4.5vw, 1.1rem);
-  }
-
-  input, button {
-    padding: 3vw;
-    font-size: clamp(0.7rem, 4vw, 0.8rem);
-  }
-
-  .scan-area {
-    width: 90%;
-    height: 30%;
-  }
-
-  table {
-    font-size: clamp(0.6rem, 3.5vw, 0.7rem);
-  }
-
-  th, td {
-    padding: 2.5vw;
-  }
+  table { font-size: 0.8rem; }
+  th, td { padding: 6px; }
 }
